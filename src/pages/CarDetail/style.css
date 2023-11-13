@@ -1,0 +1,8 @@
+.car-detail .navbar-car-detail {
+  height: 288px;
+  background-color: #f1f3ff;
+}
+
+.car-detail .car-searching .hero .list-car {
+  display: none;
+}

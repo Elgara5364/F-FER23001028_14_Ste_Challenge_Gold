@@ -1,0 +1,57 @@
+.footer {
+  max-width: 1168px;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto 100px;
+  /* padding-right: 27px !important; */
+}
+
+.footer .address,
+.footer .navigation,
+.footer .sosmed,
+.footer .copyright {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.footer .address {
+  flex-shrink: 0;
+  width: 268px;
+}
+
+.footer .sosmed {
+  flex-shrink: 0;
+}
+
+.footer .sosmed .icon-socmed {
+  display: flex;
+  gap: 28px;
+}
+
+.footer .copyright {
+  flex-shrink: 0;
+}
+
+.footer .navigation a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.copyright .logo {
+  width: 100px;
+  height: 34px;
+  background-color: #0d28a6;
+  margin-bottom: 60px;
+}
+
+@media screen and (max-width: 480px) {
+  .footer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 0 16px;
+  }
+}
