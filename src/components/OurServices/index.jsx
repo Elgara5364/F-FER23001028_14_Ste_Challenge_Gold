@@ -14,7 +14,7 @@ function OurService() {
   ]);
 
   return (
-    <div className="our-services" id="our-services">
+    <div className="our-services" id="our-services1">
       <div className="img-services">
         <div className="circle1"></div>
         <div className="circle2"></div>

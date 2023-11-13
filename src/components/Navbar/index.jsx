@@ -31,16 +31,16 @@ const Navbar = () => {
       </div>
       <div className="nav-list">
         {/* {!showSidebar ? <img src={Menu} alt="" /> : <img src={Close} />} */}
-        <a onClick={handleSidebar} href="#our-services">
+        <a onClick={handleSidebar} href="/#our-services">
           <p> Our Services</p>
         </a>
-        <a href="#why-us">
+        <a href="/#why-us">
           <p>Why Us</p>
         </a>
-        <a href="#testimony">
+        <a href="/#testimony">
           <p>Testimonial</p>
         </a>
-        <a href="#our-services">
+        <a href="/#our-services">
           <p>FAQ</p>
         </a>
       </div>
