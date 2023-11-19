@@ -4,6 +4,10 @@
   height: auto;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .navbar {
   overflow: hidden;
   margin: 0 auto;

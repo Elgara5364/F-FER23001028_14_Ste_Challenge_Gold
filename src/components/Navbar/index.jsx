@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+import { HashLink } from "react-router-hash-link";
 import "./style.css";
 import { Link } from "react-router-dom";
-import { faL } from "@fortawesome/free-solid-svg-icons";
 import Sidebar from "../Sidebar";
 import Menu from "../../assets/icon/fi_menu.png";
 import Close from "../../assets/icon/fi_x.png";
@@ -16,7 +16,7 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
-      <Link to={"/"}>
+      <Link to={"/home"}>
         <div className="logo"></div>
       </Link>
       <div className="ham-menu">
@@ -31,18 +31,18 @@ const Navbar = () => {
       </div>
       <div className="nav-list">
         {/* {!showSidebar ? <img src={Menu} alt="" /> : <img src={Close} />} */}
-        <a onClick={handleSidebar} href="/#our-services">
+        <HashLink to="/home#our-services1">
           <p> Our Services</p>
-        </a>
-        <a href="/#why-us">
+        </HashLink>
+        <HashLink to="/home#why-us">
           <p>Why Us</p>
-        </a>
-        <a href="/#testimony">
+        </HashLink>
+        <HashLink to="/home#testimony">
           <p>Testimonial</p>
-        </a>
-        <a href="/#our-services">
+        </HashLink>
+        <HashLink to="/home#faq">
           <p>FAQ</p>
-        </a>
+        </HashLink>
       </div>
     </div>
   );
