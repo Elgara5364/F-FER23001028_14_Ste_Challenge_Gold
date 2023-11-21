@@ -1,0 +1,15 @@
+.register ul {
+  display: flex;
+  list-style: none;
+  gap: 6px;
+  margin: 10px 0px;
+}
+
+.register .pass {
+  position: relative;
+  left: 4px;
+}
+
+h2 {
+  margin-top: 5px;
+}

@@ -31,17 +31,20 @@ const Navbar = () => {
       </div>
       <div className="nav-list">
         {/* {!showSidebar ? <img src={Menu} alt="" /> : <img src={Close} />} */}
-        <HashLink to="/home#our-services1">
+        <HashLink to="/#our-services1">
           <p> Our Services</p>
         </HashLink>
-        <HashLink to="/home#why-us">
+        <HashLink to="/#why-us">
           <p>Why Us</p>
         </HashLink>
-        <HashLink to="/home#testimony">
+        <HashLink to="/#testimony">
           <p>Testimonial</p>
         </HashLink>
-        <HashLink to="/home#faq">
+        <HashLink to="/#faq">
           <p>FAQ</p>
+        </HashLink>
+        <HashLink to="/register">
+          <p class="register">Register</p>
         </HashLink>
       </div>
     </div>

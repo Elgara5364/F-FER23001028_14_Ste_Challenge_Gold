@@ -34,11 +34,19 @@ html {
 .navbar .nav-list {
   display: flex;
   gap: 32px;
+  align-items: baseline;
 }
 
 .navbar .nav-list a {
   color: black;
   text-decoration: none;
+}
+
+.navbar .nav-list .register {
+  background-color: #5cb85f;
+  color: white;
+  padding: 8px 12px !important;
+  border-radius: 2px;
 }
 
 /* MEDIA QUERY  */

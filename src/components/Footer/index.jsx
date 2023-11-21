@@ -17,16 +17,16 @@ const Footer = () => {
         <h5>081-233-334-808</h5>
       </div>
       <div className="navigation">
-        <HashLink to="/home#our-services1">
+        <HashLink to="/#our-services1">
           <p> Our Services</p>
         </HashLink>
-        <HashLink to="/home#why-us">
+        <HashLink to="/#why-us">
           <p>Why Us</p>
         </HashLink>
-        <HashLink to="/home#testimony">
+        <HashLink to="/#testimony">
           <p>Testimonial</p>
         </HashLink>
-        <HashLink to="/home#our-services">
+        <HashLink to="/#our-services">
           <p>FAQ</p>
         </HashLink>
       </div>
