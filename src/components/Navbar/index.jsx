@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { HashLink } from "react-router-hash-link";
 import "./style.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Sidebar from "../Sidebar";
 import Menu from "../../assets/icon/fi_menu.png";
 import Close from "../../assets/icon/fi_x.png";
@@ -14,9 +14,17 @@ const Navbar = () => {
     setshowSidebar(!showSidebar);
   };
 
+  const access_Token = localStorage.getItem("access_token");
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("access_token");
+    navigate("./login");
+  };
+
   return (
     <div className="navbar">
-      <Link to={"/home"}>
+      <Link to={"/"}>
         <div className="logo"></div>
       </Link>
       <div className="ham-menu">
@@ -43,9 +51,15 @@ const Navbar = () => {
         <HashLink to="/#faq">
           <p>FAQ</p>
         </HashLink>
-        <HashLink to="/register">
-          <p class="register">Register</p>
-        </HashLink>
+        {access_Token ? ( //Kondisi terlebih dahulu kemudian link
+          <HashLink className="register" to="/register" onClick={handleLogout}>
+            <p>Logout</p>
+          </HashLink>
+        ) : (
+          <Link className="register" to={"/register"}>
+            register
+          </Link>
+        )}
       </div>
     </div>
   );
