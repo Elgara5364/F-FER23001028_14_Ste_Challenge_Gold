@@ -1,4 +1,4 @@
-.register ul {
+/* .register ul {
   display: flex;
   list-style: none;
   gap: 6px;
@@ -12,4 +12,67 @@
 
 h2 {
   margin-top: 5px;
+} */
+.register {
+  /* display: flex; */
+  max-width: 1440px;
+}
+
+/* LOGIN AREA CODE START  */
+.register .sign-page .login-area {
+  /* width: auto; */
+  padding: 274px 175px 222px !important;
+  box-sizing: border-box;
+}
+
+.register .sign-page .login-area h1 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px; /* 150% */
+}
+
+.register .sign-page .login-area label {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px; /* 142.857% */
+}
+
+.register .sign-page input {
+  /* width: 370px; */
+  margin-bottom: 31.75px;
+  color: #a5a5a5;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px; /* 150% */
+}
+
+.register .sign-page button {
+  width: 100%;
+  background-color: #0d28a6;
+  margin-bottom: 32px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px; /* 142.857% */
+  padding: 8px 12px !important ;
+  box-sizing: border-box;
+}
+
+h6 {
+  font-size: 0.9rem !important;
+}
+
+.register .sign-page Link {
+  color: #0d28a6;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px; /* 142.857% */
+  text-decoration-line: underline;
+}
+
+/* END OF LOGIN AREA CODE  */
+
+.register .bg {
+  background-color: beige;
+  /* width: 50%; */
 }

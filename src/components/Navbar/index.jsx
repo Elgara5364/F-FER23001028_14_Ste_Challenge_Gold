@@ -5,7 +5,6 @@ import { Link, useNavigate } from "react-router-dom";
 import Sidebar from "../Sidebar";
 import Menu from "../../assets/icon/fi_menu.png";
 import Close from "../../assets/icon/fi_x.png";
-// import "bootstrap/dist/css/bootstrap.min.css";
 
 const Navbar = () => {
   const [showSidebar, setshowSidebar] = useState(false);
@@ -18,8 +17,8 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    localStorage.removeItem("access_token");
-    navigate("./login");
+    localStorage.removeItem("access_token"); //hapus nama token(key) yang telah kita buat sebelumnya
+    navigate("./register");
   };
 
   return (
@@ -38,7 +37,6 @@ const Navbar = () => {
         </button>
       </div>
       <div className="nav-list">
-        {/* {!showSidebar ? <img src={Menu} alt="" /> : <img src={Close} />} */}
         <HashLink to="/#our-services1">
           <p> Our Services</p>
         </HashLink>
@@ -52,11 +50,15 @@ const Navbar = () => {
           <p>FAQ</p>
         </HashLink>
         {access_Token ? ( //Kondisi terlebih dahulu kemudian link
-          <HashLink className="register" to="/register" onClick={handleLogout}>
+          <HashLink
+            onKeyDown={handleLogout}
+            className="register"
+            to="/register"
+            onClick={handleLogout}>
             <p>Logout</p>
           </HashLink>
         ) : (
-          <Link className="register" to={"/register"}>
+          <Link onKeyDown={"/register"} className="register" to={"/register"}>
             register
           </Link>
         )}

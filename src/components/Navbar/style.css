@@ -15,7 +15,7 @@ html {
   box-sizing: border-box;
   margin: auto;
   background-color: #f1f3ff;
-  padding: 25px 249px 0 135px !important;
+  padding: 25px 136px 0 !important;
   display: flex;
   justify-content: space-between;
   align-items: start;

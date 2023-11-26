@@ -3,6 +3,8 @@ import "./style.css";
 import axios from "axios";
 import Navbar from "../../components/Navbar";
 import { useNavigate } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.css";
+import { Link } from "react-router-dom";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -59,7 +61,7 @@ const Register = () => {
 
   return (
     <div className="register">
-      <Navbar />
+      {/* <Navbar />
       <h1>Ini halaman register</h1>
       <h2>{!email.length || !password.length ? loginStatus : loginStatus}</h2>
       <ul>
@@ -79,9 +81,48 @@ const Register = () => {
           />
         </li>
       </ul>
-      <button disabled={loading} onClick={handleLogin}>
+      <button disabled={loading} onClick={handleLogin} onKeyDown={handleLogin}>
         {!loading ? "Login" : "Loading. . ."}
-      </button>
+      </button> */}
+      <div className="sign-page ">
+        <div className="container-fluid">
+          <div className="row">
+            <div className="login-area col-xl-6 ">
+              <h1> Welcome Back</h1>
+              <div class="mb-2  ">
+                <label for="exampleFormControlInput1" class="form-label">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  class="form-control mb-3"
+                  id="exampleFormControlInput1"
+                  placeholder="name@example.com"
+                />
+              </div>
+              <div>
+                <label for="exampleFormControlInput1" class="form-label">
+                  Password
+                </label>
+                <input
+                  type="password"
+                  id="inputPassword5"
+                  class="form-control"
+                  aria-describedby="passwordHelpBlock"
+                  placeholder="6+ Karakter"
+                />
+              </div>
+              <button> Sign in</button>
+              <h6 className="text-center">
+                Don't have an account? <Link>Sign up for free</Link>
+              </h6>
+            </div>
+            <div className="bg col-xl-6">
+              <h1>ini background</h1>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
