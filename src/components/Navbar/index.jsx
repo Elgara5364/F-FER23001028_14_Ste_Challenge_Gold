@@ -13,12 +13,12 @@ const Navbar = () => {
     setshowSidebar(!showSidebar);
   };
 
-  const access_Token = localStorage.getItem("access_token");
+  const access_Token = localStorage.getItem("Acces Token");
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    localStorage.removeItem("access_token"); //hapus nama token(key) yang telah kita buat sebelumnya
-    navigate("./register");
+    localStorage.removeItem("Acces Token"); //hapus nama token(key) yang telah kita buat sebelumnya
+    navigate("/sign-in");
   };
 
   return (
@@ -53,12 +53,12 @@ const Navbar = () => {
           <HashLink
             onKeyDown={handleLogout}
             className="register"
-            to="/register"
+            to="/sign-in"
             onClick={handleLogout}>
             <p>Logout</p>
           </HashLink>
         ) : (
-          <Link onKeyDown={"/register"} className="register" to={"/register"}>
+          <Link className="register" to={"/sign-in"}>
             register
           </Link>
         )}

@@ -13,7 +13,6 @@ html {
   margin: 0 auto;
   max-width: 1440px;
   box-sizing: border-box;
-  margin: auto;
   background-color: #f1f3ff;
   padding: 25px 136px 0 !important;
   display: flex;
@@ -40,6 +39,10 @@ html {
 .navbar .nav-list a {
   color: black;
   text-decoration: none;
+}
+
+.navbar .nav-list p {
+  margin-bottom: 0;
 }
 
 .navbar .nav-list .register {
