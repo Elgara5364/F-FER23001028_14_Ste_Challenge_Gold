@@ -58,17 +58,20 @@ function Testimonial() {
           navigation={true}
           // pagination={true}
           modules={[Navigation]}
+          allowTouchMove={false}
           className="mySwiper">
           {testimony.map((data) => (
             <SwiperSlide>
-              <div className="testy">
-                {data.avatar}
-                <div className="text">
-                  <img src={data.rate} alt="" />
-                  <p>{data.tdescription}</p>
-                  <p>
-                    {data.fname} {data.lname} {data.age}{" "}
-                  </p>
+              <div className="testy-container">
+                <div className="testy">
+                  {data.avatar}
+                  <div className="text">
+                    <img src={data.rate} alt="" />
+                    <p>{data.tdescription}</p>
+                    <p>
+                      {data.fname} {data.lname} {data.age}{" "}
+                    </p>
+                  </div>
                 </div>
               </div>
             </SwiperSlide>

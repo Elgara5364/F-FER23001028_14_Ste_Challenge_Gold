@@ -2,7 +2,7 @@
   max-width: 1920px;
   overflow: hidden;
   text-align: center;
-  margin: 0 auto 90px;
+  margin: 0 auto 60px;
 }
 
 .testimony h2 {
@@ -19,7 +19,6 @@
 
 .testimony .list-testy .testy {
   display: flex;
-
   align-items: center;
   padding: 0 32px 0 46px !important;
   gap: 46px;
@@ -93,7 +92,6 @@
 .swiper-button-next,
 .swiper-button-prev {
   position: relative !important;
-  margin-top: 1px !important;
 }
 
 .swiper-button-prev {
@@ -102,7 +100,7 @@
 }
 .swiper-button-next {
   left: 750px !important;
-  bottom: 25px !important;
+  /* bottom: 25px !important; No bottom cuz it will move to top  */
 }
 /* END OF CODE POSISI TOMBOL  */
 
@@ -125,7 +123,7 @@
   .testimony .list-testy .testy {
     width: 284px;
     height: auto;
-    padding: 0 !important;
+    padding: 40px 0 !important;
     display: flex;
     flex-direction: column;
     margin: 32px auto;
@@ -136,5 +134,14 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+  }
+
+  .swiper-button-prev {
+    left: 90px !important;
+    /* top: 16px !important; */
+  }
+  .swiper-button-next {
+    left: 160px !important;
+    /* bottom: 25px !important; */
   }
 }
