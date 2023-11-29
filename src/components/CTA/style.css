@@ -51,13 +51,16 @@
   color: white;
 }
 
-.cta-banner .container p {
+.cta-banner .container button {
   font-size: 14px;
   font-weight: 700;
   line-height: 20px; /* 142.857% */
+  background-color: #5cb85f;
+  border: none;
+  color: white;
 }
 
-.cta-banner .container a p {
+.cta-banner .container a button {
   margin: 0;
 }
 

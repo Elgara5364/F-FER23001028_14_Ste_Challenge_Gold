@@ -2,7 +2,7 @@
   max-width: 1920px;
   overflow: hidden;
   text-align: center;
-  margin: 0 auto 100px;
+  margin: 0 auto 90px;
 }
 
 .testimony h2 {
@@ -15,11 +15,6 @@
 
 .testimony .tdesc {
   margin-bottom: 40px;
-}
-
-.testimony .list-testy {
-  display: flex;
-  gap: 32px;
 }
 
 .testimony .list-testy .testy {
@@ -70,34 +65,49 @@
 
 /* SWIPER CODE START */
 
-.swiper {
-  width: 100%;
-  height: 100%;
-}
-
 .swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
+  /* text-align: center;
+  font-size: 24px;
+  background: #fff; */
 
   /* Center slide text vertically */
   flex-shrink: unset !important;
-  display: block;
+  /* display: block;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }
 
+/* BUTTON SWIPER  */
+/* INI ATUR UKURAN TOMBOL  */
 .swiper-button-prev:after,
 .swiper-button-next:after {
-  display: inline-block;
-  /* margin-top: 24px; */
-  font-size: 10px !important;
+  font-size: 15px !important;
+  font-weight: 700;
   background-color: #5cb85f;
-  padding: 15px;
-  border-radius: 100px;
-  border: 2px solid #5cb85f;
+  padding: 10px 14px;
+  border-radius: 100%;
   color: white;
 }
+
+/* START OF POSISI TOMBOL  */
+.swiper-button-next,
+.swiper-button-prev {
+  position: relative !important;
+  margin-top: 1px !important;
+}
+
+.swiper-button-prev {
+  left: 685px !important;
+  top: 20px !important;
+}
+.swiper-button-next {
+  left: 750px !important;
+  bottom: 25px !important;
+}
+/* END OF CODE POSISI TOMBOL  */
+
+/* END OF BUTTON SWIPER  */
+/* END OF SWIPER CODE  */
 
 @media screen and (max-width: 360px) {
   .testimony .list-testy {

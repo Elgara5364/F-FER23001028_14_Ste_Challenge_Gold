@@ -12,7 +12,7 @@ const Cta = () => {
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
         <Link to={"/cars-search"}>
-          <p>Mulai Sewa Mobil </p>
+          <button>Mulai Sewa Mobil </button>
         </Link>
       </div>
     </div>
