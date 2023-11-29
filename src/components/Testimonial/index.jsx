@@ -1,9 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Pic1 from "../../assets/profile1.png";
 import Pic2 from "../../assets/profile2.png";
 import Rate from "../../assets/icon/rate.png";
 import "./style.css";
+import "swiper/css";
 
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+// import required modules
+import { Navigation, Pagination } from "swiper/modules";
 function Testimonial() {
   const [testimony, setTestimony] = useState([
     {
@@ -37,21 +48,32 @@ function Testimonial() {
 
   return (
     <div className="testimony" id="testimony">
-      <h1>Testimonial</h1>
+      <h2>Testimonial</h2>
       <p className="tdesc">Berbagai review positif dari para pelanggan kami</p>
       <div className="list-testy">
-        {testimony.map((data) => (
-          <div className="testy">
-            {data.avatar}
-            <div className="text">
-              <img src={data.rate} alt="" />
-              <p>{data.tdescription}</p>
-              <p>
-                {data.fname} {data.lname} {data.age}{" "}
-              </p>
-            </div>
-          </div>
-        ))}
+        <Swiper
+          slidesPerView={"auto"}
+          centeredSlides={true}
+          spaceBetween={30}
+          navigation={true}
+          // pagination={true}
+          modules={[Navigation]}
+          className="mySwiper">
+          {testimony.map((data) => (
+            <SwiperSlide>
+              <div className="testy">
+                {data.avatar}
+                <div className="text">
+                  <img src={data.rate} alt="" />
+                  <p>{data.tdescription}</p>
+                  <p>
+                    {data.fname} {data.lname} {data.age}{" "}
+                  </p>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </div>
   );

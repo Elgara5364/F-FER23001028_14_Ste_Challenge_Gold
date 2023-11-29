@@ -56,10 +56,10 @@
   display: flex;
   flex-direction: column;
   max-width: 468px;
-  gap: 18px;
+  gap: 16px;
 }
 
-.our-services .desc h1 {
+.our-services .desc h2 {
   font-size: 24px;
   font-weight: 700;
   line-height: 36px;
@@ -71,6 +71,7 @@
   font-weight: 700;
   line-height: 20px;
   display: flex;
+  margin: 0;
 }
 
 .our-services .desc .services {

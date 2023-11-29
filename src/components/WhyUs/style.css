@@ -1,3 +1,6 @@
+*:not(.classname) {
+  box-sizing: content-box !important;
+}
 .why-us {
   max-width: 1168px;
   height: 308px;

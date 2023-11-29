@@ -54,7 +54,12 @@ const SignIn = () => {
       <div className="sign-page ">
         <div className="container-fluid">
           <div className="row">
-            <div className="login-area col-xl-6 ">
+            <div className="login-area col-12 col-xl-6 ">
+              <div className="btn">
+                <button>
+                  <Link to={"/"}></Link>
+                </button>
+              </div>
               <h1> Welcome Back</h1>
               <div class="mb-2  ">
                 <label for="exampleFormControlInput1" class="form-label">

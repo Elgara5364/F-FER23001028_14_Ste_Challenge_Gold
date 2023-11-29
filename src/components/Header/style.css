@@ -7,7 +7,7 @@
   margin: auto;
   box-sizing: border-box;
   max-width: 1440px;
-  height: 440px;
+  height: auto;
   background-color: #f1f3ff;
   display: flex;
   padding: 50px 0 0 135px !important;
@@ -18,7 +18,7 @@
   width: 50%;
   flex-direction: column;
   gap: 16px;
-  padding: 80px 32px 0 0 !important;
+  padding: 80px 50px 0 0 !important;
 }
 
 .header .desc h1 {
@@ -29,30 +29,32 @@
 
 .header .desc p {
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 20px;
-  width: 91%;
+  width: 100%;
 }
 
-.header .desc button {
+.header .desc .btn {
+  display: flex;
+  font-size: 14px;
   text-decoration: none;
   width: 140px;
   height: 36px;
-  box-sizing: border-box;
   background-color: #5cb85f;
   border: none;
   border-radius: 2px;
-  color: white;
 }
 
-.header .desc a {
+.header .desc button {
   color: white;
-  text-decoration: none;
-  padding: 12px 16px !important;
+  background-color: #5cb85f;
+  border: none;
+  padding: 8px 12px !important;
+  font-weight: 700;
 }
 
 .header .img-wrapper {
-  width: 50%;
+  width: 60%;
   height: 100%;
 }
 

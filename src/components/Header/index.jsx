@@ -13,10 +13,11 @@ const Header = () => {
           terbaik dengan harga terjangkau. Selalu siap melayani kebutuhanmu
           untuk sewa mobil selama 24 jam.
         </p>
-
-        <button className="btn">
-          <Link to={"/cars-search"}>Mulai Sewa Mobil</Link>
-        </button>
+        <div className="btn">
+          <Link to={"/cars-search"}>
+            <button>Mulai Sewa Mobil</button>
+          </Link>
+        </div>
       </div>
       <div className="img-wrapper">
         <img src={bgImg} alt="" />

@@ -25,10 +25,18 @@ h2 {
   box-sizing: border-box;
 }
 
+.register .sign-page .login-area .btn button {
+  margin: 0;
+  width: 100px;
+  height: 34px;
+  background: var(--primary-dark-blue-01, #cfd4ed);
+}
+
 .register .sign-page .login-area h1 {
   font-size: 24px;
   font-weight: 700;
   line-height: 36px; /* 150% */
+  margin: 32px 0;
 }
 
 .register .sign-page .login-area label {
@@ -58,6 +66,8 @@ h2 {
   padding: 8px 12px !important ;
   box-sizing: border-box;
   text-decoration: none;
+  border-radius: 2px;
+  border: none;
 }
 
 .register .sign-page a {
@@ -82,4 +92,15 @@ h6 {
 .register .bg {
   background-color: beige;
   /* width: 50%; */
+}
+
+@media screen and (max-width: 1200px) {
+  .register .sign-page .login-area {
+    padding: 29px 24px 204px !important;
+    box-sizing: border-box;
+  }
+
+  .bg {
+    display: none;
+  }
 }
