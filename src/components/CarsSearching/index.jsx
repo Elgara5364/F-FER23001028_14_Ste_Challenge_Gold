@@ -11,13 +11,42 @@ const CarsSearching = () => {
   const [price, setPrice] = useState("");
   const [isRented, setIsRented] = useState("");
   const [isFilter, setisFilter] = useState(false);
+  const [slicey, setSlicey] = useState({
+    a: 0,
+    b: 3,
+  });
+  const listcarnew = listCar.slice(slicey.a, slicey.b);
+  // console.log(listcarnew);
 
   useEffect(() => {
     handleGetList(title, category, price, isRented);
   }, []);
 
+  const openModal = () => {
+    document.getElementById("myModal").style.display = "block";
+  };
+
+  const closeModal = () => {
+    document.getElementById("myModal").style.display = "none";
+  };
+
+  const handlePrev = (a, b) => {
+    setSlicey({
+      a: (a -= 3),
+      b: (b -= 3),
+    });
+  };
+
+  const handleNext = (a, b) => {
+    setSlicey({
+      a: (a += 3),
+      b: (b += 3),
+    });
+  };
+
   const handleChangeTitle = (e) => {
     // console.log(e);
+    openModal();
     setTitle(e.target.value);
   };
 
@@ -34,10 +63,20 @@ const CarsSearching = () => {
   };
 
   const handleSubmit = (e) => {
+    if (
+      !title.length &&
+      !category.length &&
+      !price.length &&
+      !isRented.length
+    ) {
+      alert("Form harus diisi!!");
+    } else {
+      e.preventDefault();
+      handleGetList(title, category, price, isRented);
+      setisFilter(true);
+      closeModal();
+    }
     // console.log(title);
-    e.preventDefault();
-    handleGetList(title, category, price, isRented);
-    setisFilter(true);
   };
 
   const handleReset = () => {
@@ -47,6 +86,7 @@ const CarsSearching = () => {
     setIsRented("");
     handleGetList("", "", "", "");
     setisFilter(false);
+    closeModal();
   };
 
   const handleGetList = (dataTitle, dataCategory, dataPrice, dataIsRented) => {
@@ -66,11 +106,12 @@ const CarsSearching = () => {
   return (
     <div className="hero">
       <div className="car-searching">
-        <h3>Pencarianmu</h3>
+        {/* <h3>Pencarianmu</h3> */}
         <div className="holder">
           <div className="car-find">
             <h4>Nama Mobil</h4>
             <input
+              onClick={openModal}
               onChange={handleChangeTitle}
               className="title"
               value={title}
@@ -80,7 +121,10 @@ const CarsSearching = () => {
           <div className="car-category">
             <h4>Kategori</h4>
             <div className="category">
-              <select value={category} onChange={searchCategory}>
+              <select
+                value={category}
+                onChange={searchCategory}
+                onClick={openModal}>
                 <option value="">Masukan Kapasitas Mobil</option>
                 <option value="small">1-4 org</option>
                 <option value="medium">4-6 org</option>
@@ -91,7 +135,7 @@ const CarsSearching = () => {
           <div className="car-price">
             <h4>Harga</h4>
             <div className="price">
-              <select value={price} onChange={searchPrice}>
+              <select value={price} onChange={searchPrice} onClick={openModal}>
                 <option value="">Masukkan Harga Sewa per Hari</option>
                 <option value="minPrice=0&maxPrice=400000">
                   &lt; Rp. 400.000
@@ -108,13 +152,16 @@ const CarsSearching = () => {
           <div className="car-status">
             <h4>Status</h4>
             <div className="status">
-              <select value={isRented} onChange={searchIsRented}>
+              <select
+                value={isRented}
+                onChange={searchIsRented}
+                onClick={openModal}>
                 <option value="true">Disewa</option>
                 <option value="false">Tidak Disewa</option>
               </select>
             </div>
           </div>
-          <div className="btn">
+          <div>
             <button onClick={isFilter ? handleReset : handleSubmit}>
               {isFilter ? "Reset" : "Cari Mobil"}
             </button>
@@ -122,7 +169,7 @@ const CarsSearching = () => {
         </div>
       </div>
       <div className="list-car">
-        {listCar.map((data) => (
+        {listcarnew.map((data) => (
           <div className="list">
             <img src={data.image} alt="" />
             <div className="desc">
@@ -141,7 +188,13 @@ const CarsSearching = () => {
             </div>
           </div>
         ))}
+        <div className="pagination" id="pagination">
+          <button onClick={() => handlePrev(slicey.a, slicey.b)}>&lt;</button>
+          <button onClick={() => handleNext(slicey.a, slicey.b)}>&gt;</button>
+        </div>
       </div>
+
+      <div id="myModal" className="modal"></div>
     </div>
   );
 };

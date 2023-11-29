@@ -1,3 +1,7 @@
 .car-search .header .desc .btn {
   display: none;
 }
+
+.car-search {
+  max-width: 1440px !important;
+}
