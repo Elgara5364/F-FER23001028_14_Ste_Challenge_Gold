@@ -197,3 +197,7 @@
 .hero .pagination button:active {
   background-color: #146118;
 }
+
+.hero .pagination button:disabled {
+  background-color: #b0f2b2;
+}

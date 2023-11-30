@@ -16,7 +16,8 @@ const CarsSearching = () => {
     b: 3,
   });
   const listcarnew = listCar.slice(slicey.a, slicey.b);
-  // console.log(listcarnew);
+  console.log(listcarnew);
+  console.log(slicey);
 
   useEffect(() => {
     handleGetList(title, category, price, isRented);
@@ -58,7 +59,7 @@ const CarsSearching = () => {
     setPrice(e.target.value);
   };
 
-  const searchIsRented = () => {
+  const searchIsRented = (e) => {
     setIsRented(e.target.value);
   };
 
@@ -169,6 +170,8 @@ const CarsSearching = () => {
         </div>
       </div>
       <div className="list-car">
+        {/* ketika datanya habis dan kosong bagaimana agar button di line 195 - 204 tidak naik ke 
+        atas?*/}
         {listcarnew.map((data) => (
           <div className="list">
             <img src={data.image} alt="" />
@@ -189,8 +192,16 @@ const CarsSearching = () => {
           </div>
         ))}
         <div className="pagination" id="pagination">
-          <button onClick={() => handlePrev(slicey.a, slicey.b)}>&lt;</button>
-          <button onClick={() => handleNext(slicey.a, slicey.b)}>&gt;</button>
+          <button
+            disabled={!slicey.a ? true : false}
+            onClick={() => handlePrev(slicey.a, slicey.b)}>
+            &lt;
+          </button>
+          <button
+            disabled={!listcarnew.length ? true : false}
+            onClick={() => handleNext(slicey.a, slicey.b)}>
+            &gt;
+          </button>
         </div>
       </div>
 

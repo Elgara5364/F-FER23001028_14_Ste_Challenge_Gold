@@ -20,7 +20,8 @@
 .testimony .list-testy .testy {
   display: flex;
   align-items: center;
-  padding: 0 32px 0 46px !important;
+  padding: 0 46px 0 !important;
+  box-sizing: border-box !important;
   gap: 46px;
   width: 619px;
   height: 270px;
@@ -104,7 +105,7 @@
 }
 .swiper-button-next {
   left: 750px !important;
-  /* bottom: 25px !important; No bottom cuz it will move to top  */
+  bottom: 2px !important; /*No bottom cuz it will move to top*/
 }
 /* END OF CODE POSISI TOMBOL  */
 
