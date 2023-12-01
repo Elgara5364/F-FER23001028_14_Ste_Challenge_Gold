@@ -1,43 +1,51 @@
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 1;
-}
-
-.sidebar {
-  position: absolute;
-  top: 0;
-  z-index: 100;
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-  padding: 27px 0 !important;
-  width: 190px;
-  height: 640px;
-  gap: 18px;
-}
-
-.sidebar h4 {
-  font-size: 14px;
+.sidebar .button {
+  display: none;
+  background-color: #f1f3ff;
+  color: black;
+  font-size: 24px;
   font-weight: 700;
-  line-height: 20px; /* 142.857% */
-  padding: 0 16px !important;
+  border: none;
+  margin-right: 16px !important;
 }
 
-.sidebar .list-menu {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+.sidebar .button:hover {
+  background-color: #f1f3ff;
+  color: black;
 }
 
-.sidebar .list-menu li {
-  padding: 0px 16px !important;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 20px; /* 142.857% */
-  list-style-type: none;
+.offcanvas-header {
+  padding: 34px 24px 18px 16px !important;
+}
+
+.offcanvas-body {
+  padding: 16px !important;
+}
+
+.offcanvas-title {
+  font-weight: 700 !important;
+}
+
+.offcanvas.offcanvas-end {
+  width: 50% !important;
+}
+
+.list-menu a {
+  text-decoration: none;
+  color: black;
+  font-size: 14px !important;
+}
+
+@media screen and (max-width: 360px) {
+  .sidebar .button {
+    display: flex;
+  }
+
+  .sidebar .list-menu {
+    padding: 0 16px !important;
+  }
+
+  .sidebar .list-menu a {
+    text-decoration: none;
+    color: black;
+  }
 }

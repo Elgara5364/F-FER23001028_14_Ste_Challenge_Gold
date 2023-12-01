@@ -20,10 +20,6 @@ html {
   align-items: start;
 }
 
-.navbar .ham-menu {
-  display: none;
-}
-
 .navbar .logo {
   width: 100px;
   height: 34px;
@@ -60,54 +56,5 @@ html {
 
   .navbar .nav-list {
     display: none;
-  }
-
-  .sidebar .list-menu {
-    padding: 0 16px !important;
-  }
-
-  .sidebar .list-menu a {
-    text-decoration: none;
-    color: black;
-  }
-
-  .navbar .ham-menu button {
-    border: none;
-    position: absolute;
-    right: 21px;
-    /* padding-right: 18px !important; */
-  }
-
-  .navbar .ham-menu .menu,
-  .navbar .ham-menu .close {
-    position: sticky;
-    background-color: #f1f3ff;
-    display: flex;
-    align-items: flex-start;
-    border: none;
-    padding: 27px 5px !important;
-    z-index: 99;
-  }
-
-  .navbar .ham-menu .close {
-    background-color: white;
-    z-index: 100;
-  }
-
-  .navbar .ham-menu {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-end;
-    padding: 0px !important;
-    box-sizing: border-box;
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: #f1f3ff;
-  }
-
-  .navbar .ham-menu button img,
-  .nav-list a {
-    cursor: pointer;
   }
 }
