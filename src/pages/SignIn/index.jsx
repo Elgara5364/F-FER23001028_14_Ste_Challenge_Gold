@@ -54,7 +54,7 @@ const SignIn = () => {
       <div className="sign-page ">
         <div className="container-fluid">
           <div className="row">
-            <div className="login-area col-12 col-xl-6 ">
+            <div className="login-area col " xs={12}>
               <div className="btn">
                 <button>
                   <Link to={"/"}></Link>
@@ -88,15 +88,17 @@ const SignIn = () => {
                   onChange={handleChange}
                 />
               </div>
-              <button onClick={handleSubmit}> Sign in</button>
+              <div>
+                <button onClick={handleSubmit}> Sign in</button>
+              </div>
               <h6 className="text-center">
-                Don't have an account?{" "}
+                Don't have an account?
                 <Link to={"/sign-up"}>
                   <span>Sign Up for free</span>
                 </Link>
               </h6>
             </div>
-            <div className="bg col-xl-6">
+            <div className="bg col-6">
               <h1>ini background</h1>
             </div>
           </div>

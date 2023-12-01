@@ -22,7 +22,6 @@ h2 {
 .register .sign-page .login-area {
   /* width: auto; */
   padding: 274px 175px 222px !important;
-  box-sizing: border-box;
 }
 
 .register .sign-page .login-area .btn button {

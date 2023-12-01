@@ -29,7 +29,7 @@
   margin: 16px auto 52px;
   width: 468px;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 20px; /* 142.857% */
   margin-bottom: 52px;
 }
@@ -49,6 +49,7 @@
   background-color: #5cb85f;
   cursor: pointer;
   color: white;
+  box-sizing: content-box !important;
 }
 
 .cta-banner .container button {

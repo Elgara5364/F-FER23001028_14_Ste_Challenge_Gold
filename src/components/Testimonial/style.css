@@ -38,7 +38,7 @@
 .testimony p,
 .testimony .list-testy .testy p {
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 20px; /* 142.857% */
   margin: 0;
 }
@@ -81,13 +81,20 @@
   align-items: center; */
 }
 
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  content: "";
+  background-color: #5cb85f;
+  color: white;
+}
+
 /* BUTTON SWIPER  */
 /* INI ATUR UKURAN TOMBOL  */
 .swiper-button-prev:after,
 .swiper-button-next:after {
   font-size: 15px !important;
   font-weight: 700;
-  background-color: #5cb85f;
+  border: 1px solid #c4c4c4;
   padding: 10px 14px;
   border-radius: 100%;
   color: white;
