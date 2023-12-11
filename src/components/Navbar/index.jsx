@@ -37,12 +37,12 @@ const Navbar = () => {
             <HashLink
               onKeyDown={handleLogout}
               className="register"
-              to="/sign-in"
+              to="/register"
               onClick={handleLogout}>
               <p>Logout</p>
             </HashLink>
           ) : (
-            <Link className="register" to={"/sign-in"}>
+            <Link className="register" to={"/register"}>
               register
             </Link>
           )}

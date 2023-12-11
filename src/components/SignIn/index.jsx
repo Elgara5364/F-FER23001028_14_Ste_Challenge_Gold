@@ -1,16 +1,31 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./style.css";
 import axios from "axios";
-import Navbar from "../../components/Navbar";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import { Link } from "react-router-dom";
+import Register from "../../pages/Register";
 
-const SignIn = () => {
+// import Register from "../../pages/Register";
+
+const SignIn = (props) => {
   const [form, setForm] = useState({
     email: "",
     password: "",
   });
+
+  // const is_Logged = props.is_logged;
+  // console.log(props);
+  // props.func("hai aku child");
+  // props.func(true);
+
+  const handleSignUp = () => {
+    props.func(true);
+    // props.func("hai aku dalam komponen SIgn in");
+    // console.log(props.Log);
+    // props.func(true);
+    // console.log(props.is_logged);
+  };
 
   const handleChange = (e) => {
     // console.log(e.target);
@@ -21,8 +36,9 @@ const SignIn = () => {
     });
   };
 
-  console.log(form);
+  // console.log(form);
   const navigate = useNavigate();
+
   const handleSubmit = () => {
     const token = localStorage.getItem("Acces Token");
 
@@ -39,13 +55,15 @@ const SignIn = () => {
         config
       )
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         localStorage.setItem("Acces Token", res.data.access_token);
         alert("Login Berhasil");
+
         navigate("/");
       })
       .catch((err) => {
         console.log(err.response);
+        alert(err.response.data.message);
       });
   };
 
@@ -93,9 +111,7 @@ const SignIn = () => {
               </div>
               <h6 className="text-center">
                 Don't have an account?
-                <Link to={"/sign-up"}>
-                  <span>Sign Up for free</span>
-                </Link>
+                <span onClick={handleSignUp}>Sign Up for free</span>
               </h6>
             </div>
             <div className="bg col-6">

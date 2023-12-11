@@ -35,6 +35,18 @@
   font-size: 14px !important;
 }
 
+.register a {
+  padding: 8px 12px !important;
+  color: white;
+}
+
+.list-menu .register {
+  background-color: #5cb85f;
+  color: white;
+  padding: 8px 12px !important;
+  border-radius: 2px;
+}
+
 @media screen and (max-width: 360px) {
   .sidebar .button {
     display: flex;

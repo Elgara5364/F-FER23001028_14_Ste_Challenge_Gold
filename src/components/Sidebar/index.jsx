@@ -5,11 +5,20 @@ import Menu from "../../assets/icon/fi_menu.png";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { HashLink } from "react-router-hash-link";
+import { useNavigate, Link } from "react-router-dom";
 
 const Sidebar = () => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const access_Token = localStorage.getItem("Acces Token");
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("Acces Token"); //hapus nama token(key) yang telah kita buat sebelumnya
+    navigate("/sign-in");
+  };
 
   return (
     <div className="sidebar">
@@ -39,6 +48,19 @@ const Sidebar = () => {
               <button className="btn">
                 <a href="#faq">FAQ </a>
               </button>
+              {access_Token ? ( //Kondisi terlebih dahulu kemudian link
+                <Link
+                  onKeyDown={handleLogout}
+                  to="/sign-in"
+                  className="register"
+                  onClick={handleLogout}>
+                  Logout
+                </Link>
+              ) : (
+                <Link className="register" to={"/register"}>
+                  register
+                </Link>
+              )}
             </div>
           </div>
         </Offcanvas.Body>

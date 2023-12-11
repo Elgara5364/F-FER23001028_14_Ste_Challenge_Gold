@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-const SignUp = () => {
+const SignUp = (props) => {
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -18,22 +18,29 @@ const SignUp = () => {
     });
   };
 
-  console.log(form);
+  // console.log(props.func);
+
+  const handleSignIn = () => {
+    props.func(false);
+    // console.log(props.func());
+  };
+
+  // console.log(form);
   const navigate = useNavigate();
   const handleSubmit = () => {
-    console.log(form);
     const token = localStorage.getItem("Acces Token");
 
     axios
       .post(`https://api-car-rental.binaracademy.org/admin/auth/register`, form)
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         localStorage.setItem("Acces Token", res.data.access_token);
         alert("Register Berhasil Berhasil");
         navigate("/");
       })
       .catch((err) => {
-        console.log(err.response);
+        console.log(err.response.data.error);
+        alert(err.response.data.error.message);
       });
   };
   return (
@@ -85,9 +92,7 @@ const SignUp = () => {
               <button onClick={handleSubmit}> Sign Up</button>
               <h6 className="text-center">
                 Don't have an account?{" "}
-                <Link to={"/sign-in"}>
-                  <span>Sign in here</span>
-                </Link>
+                <span onClick={handleSignIn}>Sign in here</span>
               </h6>
             </div>
             <div className="bg col-xl-6">

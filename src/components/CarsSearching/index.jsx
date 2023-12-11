@@ -16,8 +16,7 @@ const CarsSearching = () => {
     b: 3,
   });
   const listcarnew = listCar.slice(slicey.a, slicey.b);
-  console.log(listcarnew);
-  console.log(slicey);
+  let modal = document.getElementById("cars-searching");
 
   useEffect(() => {
     handleGetList(title, category, price, isRented);
@@ -46,8 +45,6 @@ const CarsSearching = () => {
   };
 
   const handleChangeTitle = (e) => {
-    // console.log(e);
-    openModal();
     setTitle(e.target.value);
   };
 
@@ -97,7 +94,7 @@ const CarsSearching = () => {
       )
       // .get(`https://api.mudoapi.tech/menus?name=${name}&type=${type}`)
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         setListCar(res.data.cars);
         // setCarName(res.data);
       })
@@ -109,10 +106,9 @@ const CarsSearching = () => {
       <div className="car-searching">
         {/* <h3>Pencarianmu</h3> */}
         <div className="holder">
-          <div className="car-find">
+          <div className="car-find" onClick={openModal}>
             <h4>Nama Mobil</h4>
             <input
-              onClick={openModal}
               onChange={handleChangeTitle}
               className="title"
               value={title}
@@ -122,10 +118,7 @@ const CarsSearching = () => {
           <div className="car-category">
             <h4>Kategori</h4>
             <div className="category">
-              <select
-                value={category}
-                onChange={searchCategory}
-                onClick={openModal}>
+              <select value={category} onChange={searchCategory}>
                 <option value="">Masukan Kapasitas Mobil</option>
                 <option value="small">1-4 org</option>
                 <option value="medium">4-6 org</option>
@@ -153,17 +146,16 @@ const CarsSearching = () => {
           <div className="car-status">
             <h4>Status</h4>
             <div className="status">
-              <select
-                value={isRented}
-                onChange={searchIsRented}
-                onClick={openModal}>
+              <select value={isRented} onChange={searchIsRented}>
                 <option value="true">Disewa</option>
                 <option value="false">Tidak Disewa</option>
               </select>
             </div>
           </div>
           <div>
-            <button onClick={isFilter ? handleReset : handleSubmit}>
+            <button
+              onClick={isFilter ? handleReset : handleSubmit}
+              onClose={closeModal}>
               {isFilter ? "Reset" : "Cari Mobil"}
             </button>
           </div>

@@ -71,7 +71,10 @@ function CarsDetails() {
         </div>
       </div>
       <div className="details">
-        <img src={details.image} alt="" />
+        <div className="image">
+          <img src={details.image} alt="" />
+        </div>
+
         <div className="car-desc">
           <div className="cars-description">
             <h3>{details.name}</h3>
