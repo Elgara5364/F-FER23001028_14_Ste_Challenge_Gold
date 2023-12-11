@@ -34,7 +34,7 @@
 .cars-details .desc h3 {
   font-size: 14px;
   /* font-style: normal; */
-  font-weight: 700;
+  font-weight: 700 !important;
   line-height: 20px; /* 142.857% */
   letter-spacing: 0.5px;
 }
@@ -42,6 +42,9 @@
 .cars-details .desc li {
   padding-left: 5px !important;
   color: #8a8a8a;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 175%;
 }
 
 .cars-details .desc .include-desc,
@@ -65,7 +68,7 @@
 
 .cars-details .details h3 {
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 700 !important;
   line-height: 20px; /* 142.857% */
   letter-spacing: 0.5px;
 }
