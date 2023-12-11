@@ -21,6 +21,7 @@
 }
 
 .cars-details .details {
+  height: 482px;
   width: 405px;
   border-radius: 8px;
   background-color: #fff;
@@ -52,7 +53,8 @@
 }
 
 .cars-details .details .image {
-  margin: auto !important;
+  text-align: center;
+  padding: 28px 67px !important;
 }
 
 .cars-details .details img {
