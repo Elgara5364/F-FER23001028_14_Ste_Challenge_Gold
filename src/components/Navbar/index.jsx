@@ -10,7 +10,7 @@ const Navbar = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("Acces Token"); //hapus nama token(key) yang telah kita buat sebelumnya
-    navigate("/sign-in");
+    navigate("/register");
   };
 
   return (

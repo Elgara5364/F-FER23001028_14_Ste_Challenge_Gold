@@ -4,9 +4,6 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import { Link } from "react-router-dom";
-import Register from "../../pages/Register";
-
-// import Register from "../../pages/Register";
 
 const SignIn = (props) => {
   const [form, setForm] = useState({
@@ -14,17 +11,8 @@ const SignIn = (props) => {
     password: "",
   });
 
-  // const is_Logged = props.is_logged;
-  // console.log(props);
-  // props.func("hai aku child");
-  // props.func(true);
-
   const handleSignUp = () => {
     props.func(true);
-    // props.func("hai aku dalam komponen SIgn in");
-    // console.log(props.Log);
-    // props.func(true);
-    // console.log(props.is_logged);
   };
 
   const handleChange = (e) => {
@@ -62,8 +50,16 @@ const SignIn = (props) => {
         navigate("/");
       })
       .catch((err) => {
-        console.log(err.response);
-        alert(err.response.data.message);
+        if (!form.email.length) {
+          alert("email tidak boleh kosong");
+        } else if (!form.password.length) {
+          alert("password tidak boleh kosong");
+        } else if (form.email.length) {
+          alert(err.response.data.message);
+        } else if (form.password.length) {
+          alert(err.response.data.message);
+        }
+        // console.log(err.response);
       });
   };
 
