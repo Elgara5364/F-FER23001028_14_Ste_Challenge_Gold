@@ -39,8 +39,18 @@ const SignUp = (props) => {
         navigate("/");
       })
       .catch((err) => {
-        console.log(err.response.data.error);
-        alert(err.response.data.error.message);
+        // console.log(err);
+        if (!form.name.length) {
+          alert("Nama tidak boleh kosong");
+        } else if (!form.email.length) {
+          alert("email tidak boleh kosong");
+        } else if (!form.password.length) {
+          alert("password tidak boleh kosong");
+        } else if (form.email.length) {
+          alert(err.response.data.message);
+        } else if (form.password.length) {
+          alert(err.response.data.error.message);
+        }
       });
   };
   return (
