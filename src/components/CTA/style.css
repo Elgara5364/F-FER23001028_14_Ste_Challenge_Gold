@@ -29,17 +29,19 @@
   margin: 16px auto 52px;
   width: 468px;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 20px; /* 142.857% */
   margin-bottom: 52px;
 }
 
 .cta-banner .container a {
   display: flex;
-  margin: auto;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
   text-decoration: none;
   width: 140px;
-  height: 36px;
+  height: 20px;
   padding: 8px 12px !important;
   box-sizing: border-box;
   border-radius: 2px;
@@ -47,12 +49,20 @@
   background-color: #5cb85f;
   cursor: pointer;
   color: white;
+  box-sizing: content-box !important;
 }
 
-.cta-banner .container p {
+.cta-banner .container button {
   font-size: 14px;
   font-weight: 700;
   line-height: 20px; /* 142.857% */
+  background-color: #5cb85f;
+  border: none;
+  color: white;
+}
+
+.cta-banner .container a button {
+  margin: 0;
 }
 
 @media screen and (max-width: 360px) {
@@ -61,7 +71,7 @@
     width: auto;
   }
   .cta-banner .container {
-    width: 340px;
+    width: 328px;
     height: auto;
     margin: 0 16px 40px;
     padding-bottom: 60px !important;

@@ -11,13 +11,40 @@ const CarsSearching = () => {
   const [price, setPrice] = useState("");
   const [isRented, setIsRented] = useState("");
   const [isFilter, setisFilter] = useState(false);
+  const [slicey, setSlicey] = useState({
+    a: 0,
+    b: 3,
+  });
+  const listcarnew = listCar.slice(slicey.a, slicey.b);
+  let modal = document.getElementById("cars-searching");
 
   useEffect(() => {
     handleGetList(title, category, price, isRented);
   }, []);
 
+  const openModal = () => {
+    document.getElementById("myModal").style.display = "block";
+  };
+
+  const closeModal = () => {
+    document.getElementById("myModal").style.display = "none";
+  };
+
+  const handlePrev = (a, b) => {
+    setSlicey({
+      a: (a -= 3),
+      b: (b -= 3),
+    });
+  };
+
+  const handleNext = (a, b) => {
+    setSlicey({
+      a: (a += 3),
+      b: (b += 3),
+    });
+  };
+
   const handleChangeTitle = (e) => {
-    // console.log(e);
     setTitle(e.target.value);
   };
 
@@ -29,15 +56,25 @@ const CarsSearching = () => {
     setPrice(e.target.value);
   };
 
-  const searchIsRented = () => {
+  const searchIsRented = (e) => {
     setIsRented(e.target.value);
   };
 
   const handleSubmit = (e) => {
+    if (
+      !title.length &&
+      !category.length &&
+      !price.length &&
+      !isRented.length
+    ) {
+      alert("Form harus diisi!!");
+    } else {
+      e.preventDefault();
+      handleGetList(title, category, price, isRented);
+      setisFilter(true);
+      closeModal();
+    }
     // console.log(title);
-    e.preventDefault();
-    handleGetList(title, category, price, isRented);
-    setisFilter(true);
   };
 
   const handleReset = () => {
@@ -47,6 +84,7 @@ const CarsSearching = () => {
     setIsRented("");
     handleGetList("", "", "", "");
     setisFilter(false);
+    closeModal();
   };
 
   const handleGetList = (dataTitle, dataCategory, dataPrice, dataIsRented) => {
@@ -56,7 +94,7 @@ const CarsSearching = () => {
       )
       // .get(`https://api.mudoapi.tech/menus?name=${name}&type=${type}`)
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         setListCar(res.data.cars);
         // setCarName(res.data);
       })
@@ -66,9 +104,9 @@ const CarsSearching = () => {
   return (
     <div className="hero">
       <div className="car-searching">
-        <h3>Pencarianmu</h3>
+        {/* <h3>Pencarianmu</h3> */}
         <div className="holder">
-          <div className="car-find">
+          <div className="car-find" onClick={openModal}>
             <h4>Nama Mobil</h4>
             <input
               onChange={handleChangeTitle}
@@ -91,7 +129,7 @@ const CarsSearching = () => {
           <div className="car-price">
             <h4>Harga</h4>
             <div className="price">
-              <select value={price} onChange={searchPrice}>
+              <select value={price} onChange={searchPrice} onClick={openModal}>
                 <option value="">Masukkan Harga Sewa per Hari</option>
                 <option value="minPrice=0&maxPrice=400000">
                   &lt; Rp. 400.000
@@ -114,15 +152,19 @@ const CarsSearching = () => {
               </select>
             </div>
           </div>
-          <div className="btn">
-            <button onClick={isFilter ? handleReset : handleSubmit}>
+          <div>
+            <button
+              onClick={isFilter ? handleReset : handleSubmit}
+              onClose={closeModal}>
               {isFilter ? "Reset" : "Cari Mobil"}
             </button>
           </div>
         </div>
       </div>
       <div className="list-car">
-        {listCar.map((data) => (
+        {/* ketika datanya habis dan kosong bagaimana agar button di line 195 - 204 tidak naik ke 
+        atas?*/}
+        {listcarnew.map((data) => (
           <div className="list">
             <img src={data.image} alt="" />
             <div className="desc">
@@ -141,7 +183,21 @@ const CarsSearching = () => {
             </div>
           </div>
         ))}
+        <div className="pagination" id="pagination">
+          <button
+            disabled={!slicey.a ? true : false}
+            onClick={() => handlePrev(slicey.a, slicey.b)}>
+            &lt;
+          </button>
+          <button
+            disabled={!listcarnew.length ? true : false}
+            onClick={() => handleNext(slicey.a, slicey.b)}>
+            &gt;
+          </button>
+        </div>
       </div>
+
+      <div id="myModal" className="modal"></div>
     </div>
   );
 };

@@ -13,7 +13,7 @@
 
 .why-us .why-us-desc {
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 20px; /* 142.857% */
   margin-bottom: 40px;
 }
@@ -38,6 +38,7 @@
   gap: 16px;
   border: 1px solid #d0d0d0;
   border-radius: 8px;
+  box-sizing: content-box !important;
 }
 
 .why-us .desc .card img {
@@ -52,13 +53,13 @@
 
 .why-us .desc .card p {
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 20px;
 }
 
 @media screen and (max-width: 360px) {
   .why-us {
-    margin: 250px auto 100px;
+    margin: 82px auto 100px;
     height: auto;
     padding: 0px 24px !important;
   }
@@ -69,7 +70,6 @@
 
   .why-us .desc .card {
     width: 262px;
-    height: 128px;
     padding: 24px !important;
     margin-bottom: 16px;
   }

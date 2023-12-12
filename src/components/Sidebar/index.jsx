@@ -1,38 +1,71 @@
 import React from "react";
 import "./style.css";
-import { Link } from "react-router-dom";
 import { useState } from "react";
 import Menu from "../../assets/icon/fi_menu.png";
-import Close from "../../assets/icon/fi_x.png";
+import Button from "react-bootstrap/Button";
+import Offcanvas from "react-bootstrap/Offcanvas";
+import { HashLink } from "react-router-hash-link";
+import { useNavigate, Link } from "react-router-dom";
 
 const Sidebar = () => {
-  const [showSidebar, setshowSidebar] = useState(false);
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
-  const handleSidebar = () => {
-    setshowSidebar(!showSidebar);
+  const access_Token = localStorage.getItem("Acces Token");
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("Acces Token"); //hapus nama token(key) yang telah kita buat sebelumnya
+    navigate("/sign-in");
   };
 
   return (
-    <>
-      <div className="overlay"></div>
-      <div className="sidebar">
-        <h4>BCR</h4>
-        <div className="list-menu">
-          <a onClick={handleSidebar} href="#our-services">
-            <p> Our Services</p>
-          </a>
-          <a href="#why-us">
-            <p>Why Us</p>
-          </a>
-          <a href="#testimony">
-            <p>Testimonial</p>
-          </a>
-          <a href="#our-services">
-            <p>FAQ</p>
-          </a>
-        </div>
-      </div>
-    </>
+    <div className="sidebar">
+      <Button variant="primary" className="button" onClick={handleShow}>
+        <img src={Menu} alt="" />
+      </Button>
+      <Offcanvas
+        show={show}
+        onHide={handleClose}
+        placement="end"
+        restoreFocus={false}>
+        <Offcanvas.Header className="text-reset" closeButton>
+          <Offcanvas.Title>BCR</Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body>
+          <div className="sidebar-list">
+            <div className="list-menu d-flex flex-column align-items-start gap-3 ">
+              <HashLink className="btn" to={"/#our-services1"}>
+                Our Services{" "}
+              </HashLink>
+              <button className="btn">
+                <a href="#why-us">Why Us</a>
+              </button>
+              <button className="btn">
+                <a href="#testimony">Testimonial </a>
+              </button>
+              <button className="btn">
+                <a href="#faq">FAQ </a>
+              </button>
+              {access_Token ? ( //Kondisi terlebih dahulu kemudian link
+                <Link
+                  onKeyDown={handleLogout}
+                  to="/sign-in"
+                  className="register"
+                  onClick={handleLogout}>
+                  Logout
+                </Link>
+              ) : (
+                <Link className="register" to={"/register"}>
+                  register
+                </Link>
+              )}
+            </div>
+          </div>
+        </Offcanvas.Body>
+      </Offcanvas>
+    </div>
   );
 };
 

@@ -1,17 +1,16 @@
 import React, { useState } from "react";
+import { HashLink } from "react-router-hash-link";
 import "./style.css";
-import { Link } from "react-router-dom";
-import { faL } from "@fortawesome/free-solid-svg-icons";
+import { Link, useNavigate } from "react-router-dom";
 import Sidebar from "../Sidebar";
-import Menu from "../../assets/icon/fi_menu.png";
-import Close from "../../assets/icon/fi_x.png";
-// import "bootstrap/dist/css/bootstrap.min.css";
 
 const Navbar = () => {
-  const [showSidebar, setshowSidebar] = useState(false);
+  const access_Token = localStorage.getItem("Acces Token");
+  const navigate = useNavigate();
 
-  const handleSidebar = () => {
-    setshowSidebar(!showSidebar);
+  const handleLogout = () => {
+    localStorage.removeItem("Acces Token"); //hapus nama token(key) yang telah kita buat sebelumnya
+    navigate("/register");
   };
 
   return (
@@ -19,30 +18,35 @@ const Navbar = () => {
       <Link to={"/"}>
         <div className="logo"></div>
       </Link>
-      <div className="ham-menu">
-        {showSidebar && <Sidebar />}
-        <button onClick={handleSidebar}>
-          {!showSidebar ? (
-            <img className="menu" src={Menu} alt="" />
+      <div className="container-button">
+        <Sidebar />
+        <div className="nav-list">
+          <HashLink to="/#our-services1">
+            <p> Our Services</p>
+          </HashLink>
+          <HashLink to="/#why-us">
+            <p>Why Us</p>
+          </HashLink>
+          <HashLink to="/#testimony">
+            <p>Testimonial</p>
+          </HashLink>
+          <HashLink to="/#faq">
+            <p>FAQ</p>
+          </HashLink>
+          {access_Token ? ( //Kondisi terlebih dahulu kemudian link
+            <HashLink
+              onKeyDown={handleLogout}
+              className="register"
+              to="/register"
+              onClick={handleLogout}>
+              <p>Logout</p>
+            </HashLink>
           ) : (
-            <img className="close" src={Close} />
+            <Link className="register" to={"/register"}>
+              register
+            </Link>
           )}
-        </button>
-      </div>
-      <div className="nav-list">
-        {/* {!showSidebar ? <img src={Menu} alt="" /> : <img src={Close} />} */}
-        <a onClick={handleSidebar} href="#our-services">
-          <p> Our Services</p>
-        </a>
-        <a href="#why-us">
-          <p>Why Us</p>
-        </a>
-        <a href="#testimony">
-          <p>Testimonial</p>
-        </a>
-        <a href="#our-services">
-          <p>FAQ</p>
-        </a>
+        </div>
       </div>
     </div>
   );

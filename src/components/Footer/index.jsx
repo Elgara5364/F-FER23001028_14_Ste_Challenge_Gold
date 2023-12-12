@@ -6,6 +6,7 @@ import Twitch from "../../assets/icon/icon_twitch.png";
 import Mail from "../../assets/icon/icon_mail.png";
 import Twitter from "../../assets/icon/icon_twitter.png";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 const Footer = () => {
   return (
@@ -16,18 +17,18 @@ const Footer = () => {
         <h5>081-233-334-808</h5>
       </div>
       <div className="navigation">
-        <a href="#our-services">
+        <HashLink to="/#our-services1">
           <p> Our Services</p>
-        </a>
-        <a href="#why-us">
+        </HashLink>
+        <HashLink to="/#why-us">
           <p>Why Us</p>
-        </a>
-        <a href="#testimony">
+        </HashLink>
+        <HashLink to="/#testimony">
           <p>Testimonial</p>
-        </a>
-        <a href="#our-services">
+        </HashLink>
+        <HashLink to="/#our-services">
           <p>FAQ</p>
-        </a>
+        </HashLink>
       </div>
       <div className="sosmed">
         <h5>Connect with us</h5>

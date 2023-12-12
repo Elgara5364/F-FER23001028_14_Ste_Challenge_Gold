@@ -8,10 +8,10 @@ import "./style.css";
 
 const CarSearch = () => {
   return (
-    <div>
+    <div className="car-search">
       {/* <h1>ini caar search</h1> */}
       <Navbar />
-      <div className="car-search">
+      <div>
         <Header />
       </div>
       <CarsSearching />

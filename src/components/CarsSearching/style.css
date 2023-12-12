@@ -1,12 +1,13 @@
 .car-searching {
   background-color: aliceblue;
-  width: 1047px;
+  width: 1067px;
   height: auto;
   /* border: 1px solid black; */
   border-radius: 8px;
-  margin: -42px auto 40px;
+  margin: -42px auto 20px;
   position: relative;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
+  z-index: 9999;
 }
 
 .car-searching h3 {
@@ -19,6 +20,7 @@
   display: flex;
   padding: 24px !important;
   gap: 16px;
+  box-sizing: content-box !important;
 }
 
 .car-searching .car-category .category,
@@ -71,13 +73,10 @@
   height: 36px;
 }
 
-.car-searching .btn {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-
-.car-searching .btn button {
+.car-searching button {
+  position: relative;
+  top: 30px;
+  border-radius: 2px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -93,6 +92,22 @@
   font-weight: 700;
   line-height: 20px; /* 142.857% */
 }
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  transition: 3s;
+  background-color: rgba(0, 0, 0, 0.648);
+}
+
+/* LIST CAR CODE START  */
 
 .list-car {
   width: 1047px;
@@ -110,9 +125,12 @@
   width: 333px;
   height: auto;
   padding: 24px !important;
-  box-sizing: border-box;
+  box-sizing: border-box !important;
   /* border: 1px solid black; */
   margin: 24px 0;
+  border: 1px solid #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.15);
 }
 
 .list-car .list img {
@@ -159,4 +177,31 @@
   font-weight: 700;
   line-height: 20px; /* 142.857% */
   cursor: pointer;
+}
+
+/* LIST CARD CODE END  */
+
+.hero .pagination {
+  padding-left: 480px !important;
+  display: flex;
+  gap: 20px;
+  position: relative;
+  bottom: 20px;
+}
+
+.hero .pagination button {
+  background-color: #5cb85f;
+  color: white;
+  border: none;
+  border-radius: 100px;
+  width: 35px;
+  height: 35px;
+}
+
+.hero .pagination button:active {
+  background-color: #146118;
+}
+
+.hero .pagination button:disabled {
+  background-color: #b0f2b2;
 }
