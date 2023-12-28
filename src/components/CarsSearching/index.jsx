@@ -16,7 +16,7 @@ const CarsSearching = () => {
     b: 3,
   });
   const listcarnew = listCar.slice(slicey.a, slicey.b);
-  let modal = document.getElementById("cars-searching");
+  // let modal = document.getElementById("cars-searching");
 
   useEffect(() => {
     handleGetList(title, category, price, isRented);

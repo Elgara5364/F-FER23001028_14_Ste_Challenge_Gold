@@ -11,7 +11,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/pagination";
+// import "swiper/css/pagination";
 
 // import required modules
 import { Navigation, Pagination } from "swiper/modules";
@@ -62,16 +62,14 @@ function Testimonial() {
           className="mySwiper">
           {testimony.map((data) => (
             <SwiperSlide>
-              <div className="testy-container">
-                <div className="testy">
-                  {data.avatar}
-                  <div className="text">
-                    <img src={data.rate} alt="" />
-                    <p>{data.tdescription}</p>
-                    <p>
-                      {data.fname} {data.lname} {data.age}{" "}
-                    </p>
-                  </div>
+              <div className="testy">
+                {data.avatar}
+                <div className="text">
+                  <img src={data.rate} alt="" />
+                  <p>{data.tdescription}</p>
+                  <p>
+                    {data.fname} {data.lname} {data.age}{" "}
+                  </p>
                 </div>
               </div>
             </SwiperSlide>
