@@ -1,7 +1,7 @@
 .our-services {
   max-width: 1440px;
   /* height: 428px; */
-  margin: 100px auto;
+  padding: 100px 0 0 !important;
   display: flex;
   justify-content: center;
   gap: 86px;

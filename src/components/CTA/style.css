@@ -3,6 +3,7 @@
   /* justify-content: center; */
   max-width: 1440px;
   margin: auto;
+  padding: 100px 0 0 !important;
 }
 
 .cta-banner .container {
@@ -14,8 +15,7 @@
   border-radius: 13px;
   background-color: #0d28a6;
   color: white;
-  margin: 0 136px 100px 136px;
-  /* padding: 64px 285px 64px 270px !important; */
+  margin: 0 auto;
 }
 
 .cta-banner h1 {

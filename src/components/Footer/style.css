@@ -17,6 +17,10 @@
   align-items: flex-start;
 }
 
+.footer .navigation p {
+  margin-bottom: 0;
+}
+
 .footer .address {
   flex-shrink: 0;
   width: 268px;

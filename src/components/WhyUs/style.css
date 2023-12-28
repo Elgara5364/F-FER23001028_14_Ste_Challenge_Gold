@@ -1,7 +1,8 @@
 .why-us {
   max-width: 1168px;
-  height: 308px;
-  margin: 0 auto 100px;
+  /* height: 308px; */
+  margin: 0 auto;
+  padding: 100px 0 0 !important;
 }
 
 .why-us h1 {

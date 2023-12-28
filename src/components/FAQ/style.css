@@ -17,6 +17,7 @@ h5,
   height: auto;
   margin: 0 auto 60px;
   display: flex;
+  padding: 100px 0 0 !important;
 }
 
 .faq .container {

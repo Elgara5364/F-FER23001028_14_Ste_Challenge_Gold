@@ -2,7 +2,8 @@
   max-width: 1920px;
   overflow: hidden;
   text-align: center;
-  margin: 0 auto 60px;
+  margin: 0 auto;
+  padding: 100px 0 0 !important;
 }
 
 .testimony h2 {

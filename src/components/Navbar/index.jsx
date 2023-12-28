@@ -14,7 +14,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar">
+    <div className="navbar sticky-top">
       <Link to={"/"}>
         <div className="logo"></div>
       </Link>
